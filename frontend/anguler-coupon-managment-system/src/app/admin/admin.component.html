@@ -1,0 +1,42 @@
+<!-- content -->
+<div class="container-fluid content-top-gap">
+    <!-- User data -->
+    <div class="statistics">
+                
+                <div class="row">
+
+                    <div class="col-sm-4 statistics-grid">
+                        <div class="card card_border border-primary-top p-4" routerLink="/admin/createcompany">
+                            <i style="font-size: 3em; color : #343a40;" class="fa fa-credit-card"> </i>
+                            <h3 class="text-dark number">Create Company</h3>
+                            <p class="stat-text">New Company</p>
+                        </div>
+                    </div>
+               
+                    <div class="col-sm-4 statistics-grid" routerLink="/admin/customers">
+                        <div class="card card_border border-primary-top p-4">
+                            <i style="font-size: 3em; color : #343a40;" class="fa fa-user-circle-o"> </i>
+                            <h3 class="text-dark number">Customers</h3>
+                            <p class="stat-text">View Update Delete Customers</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 statistics-grid" routerLink="/admin/companies">
+                        <div class="card card_border border-primary-top p-4">
+                            <i style="font-size: 3em; color : #343a40;" class="fa fa-credit-card"> </i>
+                            <h3 class="text-dark number">Companies</h3>
+                            <p class="stat-text">View Update Delete Companies</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+      
+ 
+    <!-- //statistics data -->
+</div>
+<!-- //content -->
+
+
+<router-outlet></router-outlet>

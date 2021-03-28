@@ -1,0 +1,104 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" sticky-top>
+    <a class="navbar-brand">
+        <a class="logo" href="/home2"><img src="/assets/images/logo.png" width="150px"></a>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <!-- <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLink="home" routerLinkActive="active">
+                <a class="nav-link">Home</a>
+            </li>
+        </ul> -->
+
+        <ul class="navbar-nav ml-auto">
+            <li *ngIf="!ifLoggedIn()" class="nav-item" routerLink="register" routerLinkActive="active">
+                <a class="nav-link">Register</a>
+            <li *ngIf="!ifLoggedIn()" class="nav-item" routerLink="contact" routerLinkActive="active">
+                <a class="nav-link">Contact Us</a>
+            </li>
+            <li *ngIf="!ifLoggedIn()" class="nav-item" routerLink="login" routerLinkActive="active">
+                <button type="button" class="btn btn-info">Login</button>
+            </li>
+
+
+            <!-- <li ngbDropdown class="nav-item dropdown" *ngIf="ifCustomerLoggedIn()">
+                <div ngbDropdownToggle class="nav-link dropdown-toggle" data-toggle="dropdown_target">Customer Panel
+                </div>
+                <span class="caret"></span>
+                <div ngbDropdownMenu class="dropdown-menu " aria-labelledby="dropdown_target">
+                    <a class="dropdown-item" routerLink="/customer/profile"> Profile</a>
+                    <a class="dropdown-item" routerLink="customer/cart"> My Cart <span
+                            class="badge badge-primary">{{numberOfItemsInCart}}</span> </a>
+                    <a class="dropdown-item" routerLink="customer/coupons"> My Coupons</a>
+                </div>
+            </li> -->
+
+            <li ngbDropdown *ngIf="ifCustomerLoggedIn()" class="nav-item dropdown">
+                <div ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <!-- <i class="fa fa-envelope-o"> -->
+                    <span class="badge badge-primary">{{numberOfItemsInCart}}</span>
+                    <!-- </i> -->
+                    <span (click)="getTotalAmountOfCartItems()">Cart</span>
+                </div>
+                <div ngbDropdownMenu class="dropdown-menu coupon-dropdown" aria-labelledby="navbarDropdown">
+                    <ul>
+                        <li *ngIf="arrayOfCartItems == null || !arrayOfCartItems.length > 0">
+                            No items in cart
+                        </li>
+                        <div *ngIf="arrayOfCartItems && arrayOfCartItems.length > 0 ">
+                            <li *ngFor='let item of arrayOfCartItems'>
+                                <a>
+                                    <img class="dropdown-image-coupon" src={{item.image}} />
+                                    <span class="dropdown-title-coupon">{{item.title}} -</span>
+                                    <span class="dropdown-title-price">{{item.price | currency}}</span>
+                                    <span (click)="deleteItemFromCart(item)"
+                                        class="badge badge-primary myXButton"><b>X</b></span>
+                                </a>
+
+                                <br><br>
+                            </li>
+                            <span>
+                                <span class="dropdown-total-price">Total Amount - {{ totalAmount | currency}}</span>
+                                <button type="button" class="btn btn-info checkoutButton"
+                                    (click)="onCheckout()">Checkout</button>
+                            </span>
+                        </div>
+                    </ul>
+                </div>
+
+            </li>
+
+            <!-- <li ngbDropdown class="nav-item dropdown" *ngIf="ifAdminLoggedIn()">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle" data-toggle="dropdown_target">Admin Panel</a>
+                <span class="caret"></span>
+                <div ngbDropdownMenu class="dropdown-menu " aria-labelledby="dropdown_target">
+                    <a class="dropdown-item" routerLink="/admin/profile"> Profile</a>
+                    <a class="dropdown-item" routerLink="admin/createcompany"> Create Company</a>
+                    <a class="dropdown-item" routerLink="admin/companies"> Companies Management</a>
+                    <a class="dropdown-item" routerLink="admin/customers"> Customers Management</a>
+                </div>
+            </li> -->
+
+            <!-- <li ngbDropdown class="nav-item dropdown" *ngIf="ifCompanyLoggedIn()">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle" data-toggle="dropdown_target">Company Panel</a>
+                <span class="caret"></span>
+                <div ngbDropdownMenu class="dropdown-menu " aria-labelledby="dropdown_target">
+                    <a class="dropdown-item" routerLink="/company/profile"> Profile</a>
+                    <a class="dropdown-item" routerLink="company/addcoupon"> Create Coupon</a>
+                    <a class="dropdown-item" routerLink="company/coupons"> Coupons Management</a>
+                </div>
+            </li> -->
+
+
+            <li *ngIf="ifLoggedIn()" class="nav-item" routerLinkActive="active">
+                <button type="button" class="btn btn-info" (click)="onLogout()">Logout</button>
+            </li>
+        </ul>
+
+
+    </div>
+</nav>

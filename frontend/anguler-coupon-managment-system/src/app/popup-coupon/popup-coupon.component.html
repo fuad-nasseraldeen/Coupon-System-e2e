@@ -1,0 +1,68 @@
+<div>
+    <h2 mat-dialog-title>Update Coupon {{couponData.title}}</h2>
+    
+    <mat-dialog-actions>
+
+        
+        <div class="col-6">
+            <div class="form-group">
+                <small>TITLE</small>
+              <input [(ngModel)]="couponData.title" type="text" class="form-control input-sm"
+                placeholder="Title" />
+            </div>
+          </div>
+    
+  
+          <div class="col-6">
+            <div class="form-group">
+                <small>MESSAGE</small>
+              <input [(ngModel)]="couponData.message" type="text" class="form-control input-sm"
+                placeholder="Message" />
+            </div>
+          </div>
+
+          <div class="col-6">
+              <div class="form-group">
+                <small>AMOUNT</small>
+                <input [(ngModel)]="couponData.amount" type="text" class="form-control input-sm"
+                  placeholder="Amount" />
+              </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                  <small>PRICE</small>
+                  <input [(ngModel)]="couponData.price" type="text" class="form-control input-sm"
+                    placeholder="Price" />
+                </div>
+              </div>
+
+              <div class="col-6">
+                  <div class="form-group">
+                    <small>IMAGE URL</small>
+                    <input [(ngModel)]="couponData.image" type="text" class="form-control input-sm"
+                      placeholder="image" />
+                  </div>
+                </div>
+
+
+    
+          <button *ngIf="!showSpinner" 
+              class="btn btn-info btn-block"
+              [hidden]="!outboundClick " 
+              (click)="outboundClick = !outboundClick " 
+              (click)="onSave()"> Save Changes </button>
+    
+              <button *ngIf="showSpinner" class="btn btn-info btn-block" type="button" disabled>
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+               Loading...
+              </button>
+    
+              <button *ngIf="!showSpinner" 
+              class="btn btn-info btn-block"
+              (click)="onCancel()"> Cancel </button>
+    
+    </mat-dialog-actions>
+    
+    
+    </div>

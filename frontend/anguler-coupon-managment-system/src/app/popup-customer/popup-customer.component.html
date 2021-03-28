@@ -1,0 +1,41 @@
+<div>
+<h2 mat-dialog-title>Update Customer {{customerData.customerName}}</h2>
+
+<mat-dialog-actions>
+
+    <div class="col-6">
+        <div class="form-group">
+            <small>CUSTOMER NAME</small>
+          <input [(ngModel)]="customerData.customerName" type="text" class="form-control input-sm"
+            placeholder="Username" />
+        </div>
+      </div>
+
+
+      <div class="col-6">
+        <div class="form-group">
+            <small>PASSWORD</small>
+          <input [(ngModel)]="customerData.password" type="text" class="form-control input-sm"
+            placeholder="Password" />
+        </div>
+      </div>
+
+      <button *ngIf="!showSpinner" 
+          class="btn btn-info btn-block"
+          [hidden]="!outboundClick " 
+          (click)="outboundClick = !outboundClick " 
+          (click)="onSave()"> Save Changes </button>
+
+          <button *ngIf="showSpinner" class="btn btn-info btn-block" type="button" disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+           Loading...
+          </button>
+
+          <button *ngIf="!showSpinner" 
+          class="btn btn-info btn-block"
+          (click)="onCancel()"> Cancel </button>
+
+</mat-dialog-actions>
+
+
+</div>

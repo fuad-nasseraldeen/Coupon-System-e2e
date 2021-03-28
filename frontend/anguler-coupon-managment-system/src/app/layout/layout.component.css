@@ -1,0 +1,82 @@
+section {
+  height: 100%;
+  /* border: 4px solid black;  */
+  box-sizing: border-box; /* Width and Height will include also the border. */
+ display: grid; 
+  grid-template-rows: 0% 100% 0%;
+  grid-template-columns: repeat(12, 1fr); /* 12 columns of one fraction each. */
+}
+
+header{
+  text-align: center;
+  top: 0;
+}
+
+ /* Good for debug */
+/* section > * {
+    border: 3px solid black;
+}  */
+
+header, footer {
+  grid-column: span 12; /* Span over 12 columns */
+}
+
+
+main {
+  grid-column: span 12; /* Span over 10 columns */  
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  top: 0;
+  bottom: 0;
+}
+
+.jumbotron{
+  text-align: center;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  background-image: url(../../assets/images/coupon-home.gif);
+  background-size: 300px 130px;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 180px;
+  margin-bottom: 0px;
+  align-items: center;
+}
+
+.display-4{
+  /* Size of the jumbotron  main text and padding */
+  margin-top: 15px;
+padding: 10px;
+align-items: center;
+}
+
+.lead{
+  /* Size of the jumbotron  second text and padding */
+font-size: 13px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+color: antiquewhite;
+}
+
+#router-outlet{
+  /* MARGIN-TOP is in charge where the main component will be from top to bottom!!! */
+  text-align: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+footer{
+  text-align: center;
+}
+
+/* The sidebar menu */
+aside {
+  position: fixed;    /* Fixed Sidebar (stay in place on scroll) */
+  height: 100%;  /* Full-height: remove this if you want "auto" height */
+  width: 120px; /* Set the width of the sidebar */
+  z-index: 0; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color:rgb(218, 218, 218); /* Black */
+}

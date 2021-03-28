@@ -1,0 +1,50 @@
+<div class='panel panel-primary'  >
+    <div class='panel-body'>
+        <div class='row'>
+        </div>
+        <div class='row'>
+            <div class="col-md-6">         
+            </div>
+        </div>   
+        <div class='table-responsive' *ngIf='coupons && coupons.length '>
+            <table class='table table-hover'>
+                <thead class="thead-light" id ="thead">
+
+                    <tr>
+                        <th></th>
+                        <th>Coupon Title</th>
+                        <th>Image</th>
+                        <th>Start Date</th>
+                        <th>Expired Date</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                        <th></th>
+
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let coupon of coupons' > 
+                        <th></th> 
+                        <th>{{coupon.title}} </th>
+                        <th> <img src= {{coupon.image}}  alt="Avatar" style="width:50px; height: 50px"> </th>
+                        <th>{{coupon.startDate | date}} </th> 
+                        <th>{{coupon.endDate | date}} </th> 
+                        <th>{{coupon.type}} </th>
+                        <th>{{coupon.price | currency:'ILS' }} </th>
+                        <th></th>  
+
+                        
+                        <th></th>      
+                    </tr>
+                </tbody>
+            </table>
+        
+        
+        </div>
+        
+    </div>
+    <div><br></div>
+  
+  </div>

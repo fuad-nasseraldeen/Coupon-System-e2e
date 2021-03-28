@@ -1,0 +1,39 @@
+<div class='panel panel-primary'  >
+  <div class='panel-body'>
+      <div class='row'>
+      </div>
+      <div class='row'>
+          <div class="col-md-6">         
+          </div>
+      </div>   
+      <div class='table-responsive' *ngIf='company && company.length '>
+          <table class='table table-hover'>
+              <thead class="thead-light" id ="thead">
+                  <tr>
+                      <th>ID</th>
+                      <th>Company Name</th>
+                      <th>Password</th>
+                      <th>Email</th>
+                      <th>Delete Company</th>
+                      <th>Update Company</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor='let company of company' > 
+                      <th>{{company.companyId}} </th>
+                      <th>{{company.compName}} </th>
+                      <th>{{company.password}} </th>
+                      <th> <span class="input-group-text" id="basic-addon1">@ -   {{company.email}}</span></th>
+                      <th><button type="button" id = "deleteButton" class='btn btn-warning' style = "color:black" (click) ='deleteCompany(company.companyId)'> Remove</button></th> 
+                      <th><button type="button" class="btn btn-info"  (click) = 'updateCompany(company.companyId)'> Update</button></th>      
+                  </tr>
+              </tbody>
+          </table>
+      
+      
+      </div>
+      
+  </div>
+  <div><br></div>
+
+</div>

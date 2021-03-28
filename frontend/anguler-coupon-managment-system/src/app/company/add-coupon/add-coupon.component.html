@@ -1,0 +1,70 @@
+  <div class="limiter" >
+    <div class="container-login100">
+      <div class="wrap-login100">
+        <div class="login100-form validate-form p-l-55 p-r-55 p-t-140">
+          <span class="login100-form-title">
+            Create new Coupon
+          </span>
+          <div class="form-group">
+            <div class="wrap-input100 validate-input m-b-16">
+              <input class="input100" type="text" placeholder="Coupon Title" required [(ngModel)]="addCouponForm.title">
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <div class="wrap-input100 validate-input m-b-16">
+              <input class="input100" type="text" placeholder="Amount" required [(ngModel)]="addCouponForm.amount">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="wrap-input100 validate-input m-b-16">
+              <input class="input100" type="text" placeholder="Message" required [(ngModel)]="addCouponForm.message">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="wrap-input100 validate-input m-b-16">
+              <input class="input100" type="text" placeholder="Price" required [(ngModel)]="addCouponForm.price">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="wrap-input100 validate-input m-b-16">
+              <small>expired Date</small>
+              <input class="input100" type="date" placeholder="expired Date" required [(ngModel)]="addCouponForm.endDate">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="wrap-input100 validate-input m-b-16">
+              <input class="input100" type="text" placeholder="Image URL" required [(ngModel)]="addCouponForm.image">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="wrap-input100 validate-input m-b-16">
+              <select [(ngModel)]="addCouponForm.type" class="form-control"
+                style="border-radius: 30px;height: 50px;text-indent: 25px;">
+                <option [disabled]="true" [ngValue]="null">{{title}}</option>
+               <option *ngFor="let item of options" [value]="item.value">{{item.key}}</option>
+              </select>
+            </div>
+          </div>
+  
+          <div class="container-login100-form-btn m-b-16">
+            <button *ngIf="!showSpinner" class="login100-form-btn" [hidden]="!outboundClick "
+              (click)="outboundClick = !outboundClick " (click)="submit()"> Add Coupon </button>
+  
+            <button *ngIf="showSpinner" class="login100-form-btn" type="button" disabled>
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Loading...
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>

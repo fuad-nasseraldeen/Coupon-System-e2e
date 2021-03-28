@@ -1,0 +1,25 @@
+<div class="container" id="test">
+    <div class="row">
+        <div class="coupon" *ngFor="let c of coupons">
+            <div class="container">
+                <h4>{{c.title}}</h4>
+            </div>
+            <img src={{c.image}} alt="Avatar" style="width:100%; height: 150px">
+            <div class="price-background" style="background-color:teal">
+                <a> Only in - <span class="promo"> <small>{{c.price | currency:'ILS'}}</small></span></a>
+            </div>
+
+            <br>
+            <p>Coupon Type - <span class="promo"> {{c.type}}</span></p>
+            <p class="expire">Start date {{c.startDate | date}}</p>
+            <p class="expire">Expired date {{c.endDate | date}}</p>
+            <p>Details: {{c.message}}</p>
+
+            <div>
+                <button class="btn btn-info btn-block " (click)="addToCart(c)">
+                    Add To Cart
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="limiter" style="margin-top: 180px;">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-form validate-form p-l-55 p-r-55 p-t-140">
+        <span class="login100-form-title">
+          Sign Up
+        </span>
+        <div class="form-group">
+          <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username" *ngIf="formDetails">
+            <input class="input100" type="text" placeholder="Username" required [(ngModel)]="formDetails.customerName">
+            <span class="focus-input100"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="wrap-input100 validate-input" data-validate="Please enter password">
+            <input class="input100" type="password" name="password" placeholder="Password" id="password" required
+              [(ngModel)]="formDetails.password">
+            <span class="focus-input100"></span>
+          </div>
+        </div>
+
+        <div class="container-login100-form-btn" style="margin: 20px 0px;">
+          <button *ngIf="!showSpinner" class="login100-form-btn" [hidden]="!outboundClick "
+            (click)="outboundClick = !outboundClick " (click)="submit()"> Sign Up </button>
+
+          <button *ngIf="showSpinner" class="login100-form-btn" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

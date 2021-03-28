@@ -1,0 +1,69 @@
+<div class='panel panel-primary'>
+    <div class='panel-body'>
+        <div class='row'>
+        </div>
+        <div class='row'>
+            <div class="col-md-6">
+            </div>
+        </div>
+        <div class='table-responsive' *ngIf='coupons && coupons.length '>
+            <table class="table text-center" >
+                <thead class="thead" id="thead" >
+                    <tr>
+                        <th>Coupon Title</th>
+                        <th>Coupon Image</th>
+                        <th>Coupon Type</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let coupon of coupons'>
+                        <th>{{coupon.title}} </th>
+                        <th> <img src={{coupon.image}} alt="Avatar" style="width:50px; height: 50px"> </th>
+                        <th>{{coupon.type}} </th>
+                        <th>{{coupon.price | currency:'ILS' }} </th>
+
+                        <th><button type="button" id="deleteButton" class='btn btn-warning' style="color:black" (click)='deleteItemFromCart(coupon)'> Remove</button></th>
+                    </tr>
+
+                    <br><br><br><br>
+                </tbody>
+
+                <thead> 
+                        <th></th>
+                        <th>Number Of Products: </th>
+                        <th>Total Price:</th>
+                        <th></th>
+                        <th></th>
+                    </thead>
+
+                    <tbody> 
+                        <th></th>
+                        <th>{{numberOfProducts}}</th>
+                        <th>{{totalPrice | currency:'ILS' }}</th>
+                        <th></th>
+                        <th></th>
+                    </tbody>
+
+
+            </table>
+
+            <button *ngIf="!showPinner" 
+            class="btn btn-info "
+            [hidden]="!outboundClick " 
+            (click)="outboundClick = !outboundClick " 
+            (click)="buyCoupons()"> Buy Coupons </button>
+  
+            <button *ngIf="showSpinner" class="btn btn-info " id="buyCoupons" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+             Loading...
+            </button>
+
+
+        </div>
+
+    </div>
+    <div><br></div>
+
+</div>

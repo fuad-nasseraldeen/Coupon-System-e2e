@@ -1,0 +1,27 @@
+.coupon {
+    border: 3px dotted rgb(175, 175, 175);
+    /* Dotted border */
+    width: 20%;
+    border-radius: 14px;
+    /* Rounded border */
+    margin: 20px;
+    /* Center the coupon */
+    max-width: 420px;
+}
+
+.container {
+    padding: 0px;
+}
+
+.promo {
+    background: #ccc;
+    padding: 1px;
+}
+
+.expire {
+    color: red;
+}
+
+.price-background {
+    margin-top: 7px;
+}
