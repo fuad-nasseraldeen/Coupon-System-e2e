@@ -1,6 +1,8 @@
 # Coupon-System-e2e
 full stack Coupon Management System Java SpringBoot Angular
 
+Java full stack development : java , java 8 , Springboot , spring MVC , Restfull, css,html,js, angular
+
 ## Table of contents
 * [General info](#general-info)
 * [About the Project](#about)
